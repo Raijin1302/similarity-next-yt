@@ -27,7 +27,7 @@ module.exports = {
         "dark-gold": "#533513",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", ...fontFamily.sans],
+        Inter: ["var(--font-inter)", ...fontFamily.sans],
       },
     },
   },
