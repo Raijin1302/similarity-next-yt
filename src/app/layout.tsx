@@ -3,7 +3,7 @@ import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
-
+import { Toaster } from "@/components/ui/Toast";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Similarity Api",
@@ -23,6 +23,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
         <Providers>
           {children}
+          <Toaster position="bottom-center" />
           {/* @ts-expect-error Server Component */}
           <Navbar />
         </Providers>
