@@ -21,7 +21,7 @@ interface ParagraphProps
   extends HTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof headingVariants> {}
 
-const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
+const LgHeading = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ className, size, children, ...props }, ref) => {
     return (
       <h1
@@ -34,4 +34,4 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
     );
   }
 );
-export default Paragraph;
+export default LgHeading;
