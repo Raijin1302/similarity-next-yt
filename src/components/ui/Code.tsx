@@ -20,7 +20,7 @@ const Code: FC<CodeProps> = ({
   animationDelay,
 }) => {
   const { theme: applicationTheme } = useTheme();
-  const [text, setText] = useState(animated ? "" : code);
+  const [text, setText] = useState<string>(animated ? "" : code);
   useEffect(() => {
     if (show && animated) {
       let i = 0;
