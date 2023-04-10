@@ -23,8 +23,9 @@ export default function RootLayout({
     >
       <body className="font-Inter min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
         <Providers>
-          {children}
           <Toaster position="bottom-center" />
+
+          {children}
           {/* @ts-expect-error Server Component */}
           <Navbar />
         </Providers>
