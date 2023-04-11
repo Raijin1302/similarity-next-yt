@@ -1,9 +1,10 @@
+import { nanoid } from "nanoid";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { CreateApiData } from "@/types/api";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import nanoid from "nanoid";
+import { z } from "zod";
 const handler = async (
   res: NextApiResponse<CreateApiData>,
   req: NextApiRequest
@@ -30,14 +31,23 @@ const handler = async (
         createdApiKey: null,
       });
     }
-
     const createdApiKey = await db.apiKey.create({
       data: {
         userId: user.id,
-        key: nanoid(),
+        key: nanoid(32),
       },
     });
 
     return res.status(200).json({ error: null, createdApiKey });
-  } catch (error) {}
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ error: error.issues, createdApiKey: null });
+    }
+
+    return res
+      .status(500)
+      .json({ error: "Internal Server Error", createdApiKey: null });
+  }
 };
+
+export default handler;
