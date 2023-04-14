@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import {
   GridColumnHeaderParams,
@@ -15,9 +16,7 @@ const columnsDraft: GridColDef[] = [
     width: 400,
     renderHeader(params) {
       return (
-        <strong className="font-semibold">
-          {params.colDef.headerName} :key:
-        </strong>
+        <strong className="font-semibold">{params.colDef.headerName} 🔑</strong>
       );
     },
   },
@@ -52,9 +51,7 @@ const columns = columnsDraft.map((col) => {
     ...col,
     renderHeader(params: GridColumnHeaderParams<any, any, any>) {
       return (
-        <strong className="font-semibold">
-          {params.colDef.headerName} :key:
-        </strong>
+        <strong className="font-semibold">{params.colDef.headerName}</strong>
       );
     },
   };

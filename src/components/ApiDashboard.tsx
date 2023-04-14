@@ -6,6 +6,7 @@ import { formatDistance } from "date-fns";
 import LgHeading from "./ui/LgHeading";
 import Paragraph from "./ui/Paragraph";
 import { Input } from "./ui/Input";
+import Table from "./ui/Table";
 const ApiDashboard = async () => {
   const user = await getServerSession(authOptions);
   if (!user) notFound();
@@ -15,8 +16,6 @@ const ApiDashboard = async () => {
   });
 
   const activatedApiKey = apiKeys.find((apiKey) => apiKey.enabled);
-
-  console.log(apiKeys);
 
   if (!activatedApiKey) notFound();
   const userRequests = await db.apiRequest.findMany({
@@ -46,6 +45,7 @@ const ApiDashboard = async () => {
       <Paragraph className="text-center md:text-left mt-4 -mb-4">
         Your APi history :
       </Paragraph>
+      <Table userRequests={serializabelRequests} />
     </div>
   );
 };
