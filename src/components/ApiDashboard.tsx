@@ -7,6 +7,7 @@ import LgHeading from "./ui/LgHeading";
 import Paragraph from "./ui/Paragraph";
 import { Input } from "./ui/Input";
 import Table from "./ui/Table";
+import ApiKeyOptions from "./ApiKeyOptions";
 const ApiDashboard = async () => {
   const user = await getServerSession(authOptions);
   if (!user) notFound();
@@ -41,6 +42,10 @@ const ApiDashboard = async () => {
           value={activatedApiKey.key}
         />
         {/* add options to create / */}
+        <ApiKeyOptions
+          apiKeyId={activatedApiKey.id}
+          apiKeyCopy={activatedApiKey.key}
+        />
       </div>
       <Paragraph className="text-center md:text-left mt-4 -mb-4">
         Your APi history :
