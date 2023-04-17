@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/Tabs";
 import Code from "./ui/Code";
 import SimpleBar from "simplebar-react";
-import { go, nodejs, python } from "@/constant/documentation-code";
+import { go, nodejs, python } from "@/helpers/documentation-code";
 
 const DocumentationTabs: FC = ({}) => {
   return (

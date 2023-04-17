@@ -10,8 +10,8 @@ import Button from "./ui/Button";
 import { Loader2 } from "lucide-react";
 import { toast } from "./ui/Toast";
 import { useRouter } from "next/navigation";
-import { createApiKey } from "@/constant/create-api-key";
-import { revokeApiKey } from "@/constant/revoke-api-key";
+import { createApiKey } from "@/helpers/create-api-key";
+import { revokeApiKey } from "@/helpers/revoke-api-key";
 interface ApiKeyOptionsProps {
   apiKeyId: string;
   apiKeyCopy: string;

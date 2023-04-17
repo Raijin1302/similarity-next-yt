@@ -2,7 +2,7 @@
 
 import { FC, FormEvent, useState } from "react";
 import { toast } from "./ui/Toast";
-import { createApiKey } from "@/constant/create-api-key";
+import { createApiKey } from "@/helpers/create-api-key";
 import { Key } from "lucide-react";
 import LgHeading from "./ui/LgHeading";
 import Paragraph from "./ui/Paragraph";
