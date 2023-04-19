@@ -1,6 +1,7 @@
-import { FC, HTMLAttributes, forwardRef } from "react";
-import { VariantProps, cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { HTMLAttributes } from "react"
+import * as React from "react"
+import { VariantProps, cva } from "class-variance-authority"
+import { cn } from "@/lib/utils"
 const headingVariants = cva(
   "text-black dark:text-white text-center lg:text-left font-extrabold leading-tight tracking-tighter",
   {
@@ -15,13 +16,13 @@ const headingVariants = cva(
       size: "default",
     },
   }
-);
+)
 
 interface ParagraphProps
   extends HTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof headingVariants> {}
-
-const LgHeading = forwardRef<HTMLParagraphElement, ParagraphProps>(
+// eslint-disable-next-line react/display-name
+const LgHeading = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ className, size, children, ...props }, ref) => {
     return (
       <h1
@@ -31,7 +32,7 @@ const LgHeading = forwardRef<HTMLParagraphElement, ParagraphProps>(
       >
         {children}
       </h1>
-    );
+    )
   }
-);
-export default LgHeading;
+)
+export default LgHeading
