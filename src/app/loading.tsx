@@ -4,9 +4,18 @@ const Loading = ({}) => {
   return (
     <div className=" mx-auto container flex flex-col-reverse gap-6 h-screen items-center justify-center">
       <div>
-        <p>Loading .... !</p>
+        <div className="text-loader ">
+          <p>Loading </p>
+          <div className="words ">
+            <span className="word">Buttons</span>
+            <span className="word">Forms</span>
+            <span className="word">Switches</span>
+            <span className="word">Cards</span>
+            <span className="word">Buttons</span>
+          </div>
+        </div>
       </div>
-      <div className="flex gap-6 ">
+      <div className="flex gap-6 dark:bg-light-gold ">
         <div className="loader">
           <svg viewBox="0 0 80 80">
             <circle id="test" cx={40} cy={40} r={32} />
