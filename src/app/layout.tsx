@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import { Toaster } from "@/components/ui/Toast"
+import MobileMenu from "@/components/MobileMenu"
 const inter = Inter({
   variable: "--font-inter",
   weight: ["300", "400", "500", "600", "700"],
@@ -31,7 +32,7 @@ export default function RootLayout({
       <body className="font-Inter min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
         <Providers>
           <Toaster position="bottom-center" />
-
+          <MobileMenu />
           {children}
           {/* @ts-expect-error Server Component */}
           <Navbar />
